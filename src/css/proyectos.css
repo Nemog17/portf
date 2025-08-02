@@ -46,6 +46,7 @@ header {
 
 .user {
     color: #4caf50; /* Username color */
+    text-decoration: none;
 }
 
 .at,

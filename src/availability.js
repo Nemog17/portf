@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(html => {
       const isOpen = /open to work|abierto a trabajar/i.test(html);
       if (isOpen) {
-        availability.textContent = 'available';
+        availability.textContent = 'disponible';
         availability.classList.add('available');
       } else {
-        availability.textContent = 'not available';
+        availability.textContent = 'no disponible';
         availability.classList.add('not-available');
       }
     })
     .catch(() => {
-      availability.textContent = 'not available';
+      availability.textContent = 'no disponible';
       availability.classList.add('not-available');
     });
 });
