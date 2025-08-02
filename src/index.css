@@ -1,0 +1,223 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace; /* Monospace for terminal effect */
+    color: #eeeeee;
+    background-color: #0a0a0a;
+    line-height: 1.4;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    padding: 1.5rem; /* Reduced padding for better space management */
+    box-sizing: border-box;
+}
+
+header {
+    padding-bottom: 0.5rem; /* Reduced padding for minimalism */
+    border-bottom: 1px solid #585858;
+    margin-bottom: 1.5rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-content h1 {
+    font-size: 1.6rem; /* Slightly larger font size for emphasis */
+    color: #eeeeee; /* Use same color as h3 for consistency */
+    font-weight: normal;
+    margin: 0;
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.user {
+    color: #4caf50; /* Username color */
+}
+
+.at,
+.in {
+    color: #8a8a8a; /* Less contrast for secondary elements */
+    margin: 0 0.2rem;
+}
+
+.host,
+.directory {
+    color: #eeeeee;
+}
+
+.prompt {
+    color: #8a8a8a;
+    margin-left: 0.3rem;
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.3rem;
+    background-color: #eeeeee;
+    margin-left: 0.1rem;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.header-content p {
+    font-size: 0.9rem; /* Smaller font for a lighter touch */
+    color: #bcbcbc; /* Lighter text for less emphasis */
+    margin: 0;
+    background-color: transparent; /* Removed background for minimalism */
+}
+
+.availability {
+    color: #4caf50;
+    font-weight: normal;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.availability:hover {
+    color: #0a0a0a;
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+main {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 1.5rem; /* Adjusted for space management */
+    padding: 1rem 0;
+    margin: 3rem auto 3rem auto;
+}
+
+.intro {
+    padding-top: 2.3rem;
+    text-align: right;
+    width: auto;
+    max-width: 650px;
+    border-right: 2px solid #c5c5c5; /* Lighter border for separation */
+    padding-right: 1rem;
+}
+
+.intro h2 {
+    font-size: 1.5rem; /* Smaller for subtitling */
+    color: #e3e3e3; /* Subtitle color */
+    margin-top: -0.3rem;
+    margin-bottom: 0px;
+}
+
+.intro p {
+    font-size: 0.9rem; /* Smaller text for less clutter */
+    color: #bcbcbc;
+    margin-bottom: 1rem;
+}
+
+.intro p:nth-child(2) {
+    color: #d5d5d5;
+    font-size: 1.2rem;
+}
+
+.navigation {
+    width: auto;
+    max-width: 700px;
+}
+
+.navigation h3 {
+    font-size: 1.3rem; /* Slightly larger for better hierarchy */
+    margin-bottom: 0.6rem;
+    color: #eeeeee;
+    margin-top: 0;
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    margin-bottom: 0.8rem; /* More compact spacing */
+    transition: background-color 0.3s ease; /* Minimalist hover effect */
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #8a8a8a;
+    font-size: 1rem; /* More compact font size for links */
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #eeeeee;
+}
+
+footer {
+    border-top: 1.8px solid #b3b3b3;
+    text-align: center;
+    padding-top: 0.5rem;
+    font-size: 1.5rem; /* Smaller footer text */
+    color: #bcbcbc;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+footer a {
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 1rem;
+    }
+
+    .intro {
+        border-right: none; /* Remove border on smaller screens */
+        border-bottom: 1px solid #585858; /* Add bottom border for separation */
+        padding-right: 0;
+        padding-bottom: 1rem;
+    }
+
+    .navigation {
+        padding-top: 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.4rem; /* Slightly adjusted for mobile */
+    }
+
+    .intro h2 {
+        font-size: 1rem; /* Adjust subtitle */
+    }
+
+    .navigation h3 {
+        font-size: 1.1rem; /* Adjust nav header */
+    }
+
+    .navigation a {
+        font-size: 0.9rem; /* Adjust link size */
+    }
+}

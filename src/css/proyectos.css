@@ -1,0 +1,248 @@
+/* Base Styles */
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace; /* Monospace for terminal effect */
+    color: #eeeeee;
+    background-color: #0a0a0a;
+    line-height: 1.4;
+}
+
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    padding: 1.5rem; /* Reduced padding for better space management */
+    box-sizing: border-box;
+}
+
+header {
+    padding-bottom: 0.5rem; /* Reduced padding for minimalism */
+    border-bottom: 1px solid #585858;
+    margin-bottom: 1.5rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-content h1 {
+    font-size: 1.6rem; /* Slightly larger font size for emphasis */
+    color: #eeeeee; /* Use same color as h3 for consistency */
+    font-weight: normal;
+    margin: 0;
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.user {
+    color: #4caf50; /* Username color */
+}
+
+.at,
+.in {
+    color: #8a8a8a; /* Less contrast for secondary elements */
+    margin: 0 0.2rem;
+}
+
+.host,
+.directory {
+    color: #eeeeee;
+}
+
+.prompt {
+    color: #8a8a8a;
+    margin-left: 0.3rem;
+}
+
+.cursor {
+    display: inline-block;
+    width: 0.3rem;
+    background-color: #eeeeee;
+    margin-left: 0.1rem;
+    animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.header-content p {
+    font-size: 0.9rem; /* Smaller font for a lighter touch */
+    color: #bcbcbc; /* Lighter text for less emphasis */
+    margin: 0;
+    background-color: transparent; /* Removed background for minimalism */
+}
+
+.availability {
+    color: #4caf50;
+    font-weight: normal;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    transition: color 0.3s, border-color 0.3s, background-color 0.3s;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.availability:hover {
+    color: #0a0a0a;
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    flex-direction: column; /* Column layout for centralization */
+    align-items: center; /* Center content */
+    justify-content: center; /* Center content */
+    gap: 2rem;
+    padding: 1rem 0;
+    margin: auto;
+}
+
+.intro {
+    max-width: 500px;
+    text-align: center; /* Center align intro text */
+}
+
+.intro h2 {
+    font-size: 1.8rem;
+    color: #e3e3e3;
+    margin-bottom: 1rem;
+}
+
+.intro p {
+    font-size: 1rem;
+    color: #bcbcbc;
+    margin-bottom: 1rem;
+}
+
+.intro p:nth-child(2) {
+    color: #d5d5d5;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.navigation {
+    max-width: 600px;
+    text-align: left; /* Left-align for better readability */
+}
+
+.navigation h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #eeeeee;
+    text-align: center; /* Center align title */
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation li:hover {
+    background-color: #333333;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #8a8a8a;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+    color: #eeeeee;
+}
+
+.navigation p {
+    color: #bcbcbc;
+    font-size: 0.9rem;
+    margin: 0.5rem 0 0 0;
+}
+
+/* Footer Styles */
+footer {
+    border-top: 1.8px solid #b3b3b3;
+    text-align: center;
+    padding-top: 0.5rem;
+    font-size: 1.5rem; /* Smaller footer text */
+    color: #bcbcbc;
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+footer a {
+    color: #eeeeee;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-content h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    main {
+        align-items: center; /* Center content for smaller screens */
+    }
+
+    .intro,
+    .navigation {
+        width: 100%;
+        text-align: center; /* Center text for smaller screens */
+    }
+
+    .intro {
+        padding-bottom: 1rem;
+    }
+
+    .navigation {
+        padding-top: 1rem;
+    }
+
+    .intro h2 {
+        font-size: 1.4rem;
+    }
+
+    .navigation h3 {
+        font-size: 1.2rem;
+    }
+
+    .navigation a {
+        font-size: 1rem;
+    }
+}
